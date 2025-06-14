@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../getx/reactive_builder.dart';
 import 'counter_controller.dart';
 
 class CounterPage extends StatefulWidget {
@@ -18,9 +19,7 @@ class _CounterPageState extends State<CounterPage> {
       appBar: AppBar(title: const Text('Counter Example')),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          setState(() {
-            controller.increment();
-          });
+          controller.increment();
         },
         child: const Icon(Icons.add),
       ),
@@ -28,7 +27,10 @@ class _CounterPageState extends State<CounterPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('${controller.counter}', style: const TextStyle(fontSize: 30)),
+            ReactiveBuilder<int>(
+              rx: controller.counter,
+              builder: (value) => Text('Value: $value'),
+            ),
           ],
         ),
       ),

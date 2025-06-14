@@ -1,6 +1,8 @@
+import 'package:state_management_in_flutter/getx/rx.dart';
+
 class CounterController {
-  int counter = 0;
+  Rx<int> counter = Rx(0);
   void increment() {
-    counter++; // Increment the counter
+    counter.value++;
   }
 }
