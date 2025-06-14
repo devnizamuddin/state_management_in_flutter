@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:state_management_in_flutter/home_page.dart';
+
+import 'routes/app_pages.dart';
+import 'routes/app_routes.dart';
 
 class StateManagementInFlutter extends StatelessWidget {
   const StateManagementInFlutter({super.key});
@@ -11,10 +13,11 @@ class StateManagementInFlutter extends StatelessWidget {
       title: 'State Management In Flutter',
       themeMode: ThemeMode.system,
       darkTheme: ThemeData.dark(),
+      initialRoute: Routes.INITIAL,
+      routes: AppRoutesDestination.routes,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const HomePage(),
     );
   }
 }
