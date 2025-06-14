@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../getx_example/counter/counter_page.dart';
-import '../home_page.dart';
+import '../modules/home/view/home_page.dart';
 import 'app_routes.dart';
 
 class AppRoutesDestination {
